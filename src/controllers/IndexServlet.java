@@ -25,7 +25,6 @@ public class IndexServlet extends HttpServlet {
      */
     public IndexServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
     /**
@@ -34,6 +33,7 @@ public class IndexServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         EntityManager em = DBUtil.createEntityManager();
 
+        
         List<message> messages = em.createNamedQuery("getAllMessages", message.class).getResultList();
         response.getWriter().append(Integer.valueOf(messages.size()).toString());
 
