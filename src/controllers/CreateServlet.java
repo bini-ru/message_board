@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.message;
+import models.Message;
 import util.DBUtil;
 
 /**
@@ -37,7 +37,7 @@ public class CreateServlet extends HttpServlet {
             EntityManager em = DBUtil.createEntityManager();
             em.getTransaction().begin();
 
-            message m = new message();
+            Message m = new Message();
 
             String title = request.getParameter("title");
             m.setTitle(title);

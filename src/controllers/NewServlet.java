@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.message;
+import models.Message;
 
 /**
  * Servlet implementation class NewServlet
@@ -34,7 +34,7 @@ public class NewServlet extends HttpServlet {
         request.setAttribute("_token", request.getSession().getId());
 
         //おまじないのインスタンスを生成
-        request.setAttribute("message", new message());
+        request.setAttribute("message", new Message());
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/messages/new.jsp");
         rd.forward(request, response);

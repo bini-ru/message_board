@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.message;
+import models.Message;
 import util.DBUtil;
 
 /**
@@ -36,7 +36,7 @@ public class EditSevlet extends HttpServlet {
 
 
         //該当のIDのメッセージ１件のみをデータベースから取得
-        message m = em.find(message.class,Integer.parseInt(request.getParameter("id")));
+        Message m = em.find(Message.class,Integer.parseInt(request.getParameter("id")));
 
 
         em.close();

@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.message;
+import models.Message;
 import util.DBUtil;
 
 /**
@@ -42,7 +42,7 @@ public class UpdateServlet extends HttpServlet {
 
             //セッションスコープからメッセージIDを取得して
             //該当のIDのメッセージ1件のみをデータベースから取得
-            message m = em.find(message.class,(Integer)(request.getSession().getAttribute("message_id")));
+            Message m = em.find(Message.class,(Integer)(request.getSession().getAttribute("message_id")));
 
 
             //フォームの内容を各フィールドに上書き
